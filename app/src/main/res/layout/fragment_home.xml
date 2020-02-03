@@ -5,12 +5,37 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="60dp"
-        android:textSize="30dp"
-        android:layout_centerInParent="true"
-        android:text="HOME"></TextView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/pager">-->
+
+
+<!--        <androidx.viewpager.widget.PagerTabStrip-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:foregroundGravity="top"></androidx.viewpager.widget.PagerTabStrip>-->
+<!--    </androidx.viewpager.widget.ViewPager>-->
+
+
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/tab"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        ></com.google.android.material.tabs.TabLayout>-->
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="50dp"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        android:textSize="30dp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:text="HOME"></TextView>-->
 </RelativeLayout>

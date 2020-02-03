@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Build;
@@ -15,13 +17,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 Toolbar toolbar;
 TabLayout tabLayout;
 ViewPager viewPager;
 TabItem tabMovies, tabEvents, tabSports, tabPopularEvents;
 Fragment selectedFragment = null;
-
+    List<MovieItem> lstBook ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,50 +47,64 @@ Fragment selectedFragment = null;
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-                if (tab.getPosition() == 1) {
-                    toolbar.setBackgroundColor(ContextCompat.getColor(MainActivity.this,
-                            R.color.colorAccent));
-                    tabLayout.setBackgroundColor(ContextCompat.getColor(MainActivity.this,
-                            R.color.colorAccent));
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,
-                                R.color.colorAccent));
-                    }
-                } else if (tab.getPosition() == 2) {
-                    toolbar.setBackgroundColor(ContextCompat.getColor(MainActivity.this,
-                            android.R.color.darker_gray));
-                    tabLayout.setBackgroundColor(ContextCompat.getColor(MainActivity.this,
-                            android.R.color.darker_gray));
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,
-                                android.R.color.darker_gray));
-                    }
-                } else {
-                    toolbar.setBackgroundColor(ContextCompat.getColor(MainActivity.this,
-                            R.color.colorPrimary));
-                    tabLayout.setBackgroundColor(ContextCompat.getColor(MainActivity.this,
-                            R.color.colorPrimary));
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,
-                                R.color.colorPrimaryDark));
-                    }
-                }
-            }
 
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
 
-            }
 
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
+        lstBook = new ArrayList<>();
+        lstBook.add(new MovieItem("The Vegitarian","Categorie Book","Description book",R.drawable.ic_checkered_flags_psd_icon));
+        lstBook.add(new MovieItem("The Wild Robot","Categorie Book","Description book",R.drawable.ic_favorite_border_black_24dp));
+        lstBook.add(new MovieItem("Maria Semples","Categorie Book","Description book",R.drawable.ic_profile_black_24dp));
+        lstBook.add(new MovieItem("The Martian","Categorie Book","Description book",R.drawable.ic_favorite_border_black_24dp));
+        lstBook.add(new MovieItem("He Died with...","Categorie Book","Description book",R.drawable.ic_favorite_border_black_24dp));
 
-            }
-        });
+        RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);
+        RecyclerViewAdapter myAdapter = new RecyclerViewAdapter(this,lstBook);
+        myrv.setLayoutManager(new GridLayoutManager(this,2));
+        myrv.setAdapter(myAdapter);
+//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+//                viewPager.setCurrentItem(tab.getPosition());
+//                if (tab.getPosition() == 1) {
+//                    toolbar.setBackgroundColor(ContextCompat.getColor(MainActivity.this,
+//                            R.color.colorAccent));
+//                    tabLayout.setBackgroundColor(ContextCompat.getColor(MainActivity.this,
+//                            R.color.colorAccent));
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,
+//                                R.color.colorAccent));
+//                    }
+//                } else if (tab.getPosition() == 2) {
+//                    toolbar.setBackgroundColor(ContextCompat.getColor(MainActivity.this,
+//                            android.R.color.darker_gray));
+//                    tabLayout.setBackgroundColor(ContextCompat.getColor(MainActivity.this,
+//                            android.R.color.darker_gray));
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,
+//                                android.R.color.darker_gray));
+//                    }
+//                } else {
+//                    toolbar.setBackgroundColor(ContextCompat.getColor(MainActivity.this,
+//                            R.color.colorPrimary));
+//                    tabLayout.setBackgroundColor(ContextCompat.getColor(MainActivity.this,
+//                            R.color.colorPrimary));
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//                        getWindow().setStatusBarColor(ContextCompat.getColor(MainActivity.this,
+//                                R.color.colorPrimaryDark));
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//
+//            }
+//        });
 
 
 
@@ -103,7 +122,7 @@ Fragment selectedFragment = null;
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
 
-                
+
 
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 

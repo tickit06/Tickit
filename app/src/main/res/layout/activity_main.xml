@@ -24,6 +24,10 @@
         android:layout_above="@id/bottom_navigation">
     </FrameLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recycler_main"></androidx.recyclerview.widget.RecyclerView>
     <com.google.android.material.tabs.TabLayout
 
         android:id="@+id/tablayout"
