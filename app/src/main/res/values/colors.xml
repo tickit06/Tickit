@@ -9,5 +9,6 @@
     <color name="black">#030303</color>
     <color name="grey">#B8B8BB</color>
     <color name="cream">#E8E8EC</color>
-
+    <color name="green">#00796B</color>
+    <color name="sky">#6F4AE7E1</color>
 </resources>

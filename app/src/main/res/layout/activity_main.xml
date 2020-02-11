@@ -7,68 +7,86 @@
     tools:context=".MainActivity">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/colorPrimaryDark"-->
+<!--        android:minHeight="?attr/actionBarSize"-->
+<!--        android:theme="?attr/actionBarTheme"-->
+<!--        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+<!--        app:theme="@style/ThemeOverlay.AppCompat.Dark" />-->
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation">
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_navigation"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
     </FrameLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recycler_main"></androidx.recyclerview.widget.RecyclerView>
-    <com.google.android.material.tabs.TabLayout
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:fillViewport="true"-->
+<!--        android:layout_marginTop="10dp"> -->
+     <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
 
-        android:id="@+id/tablayout"
-        android:layout_width="match_parent"
-        android:layout_height="28dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/colorPrimary"
-        app:tabSelectedTextColor="@android:color/white"
-        app:tabTextColor="@android:color/white">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_main"
+            android:layout_width="match_parent"
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/TabMovies"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:text="Movies">
 
-        </com.google.android.material.tabs.TabItem>
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"></androidx.recyclerview.widget.RecyclerView>
+     </LinearLayout>
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/TabEvents"
+<!--    </androidx.core.widget.NestedScrollView>-->
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Events" />
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/TabSports"
+<!--    <com.google.android.material.tabs.TabLayout-->
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sports" />
+<!--        android:id="@+id/tablayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="28dp"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:background="@color/colorPrimary"-->
+<!--        app:tabSelectedTextColor="@android:color/white"-->
+<!--        app:tabTextColor="@android:color/white">-->
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/TabPopularevents"
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/TabMovies"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/white"-->
+<!--            android:text="Movies">-->
 
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Popular Events" />
+<!--        </com.google.android.material.tabs.TabItem>-->
 
-    </com.google.android.material.tabs.TabLayout>
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/TabEvents"-->
+
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Events" />-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/TabSports"-->
+
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Sports" />-->
+
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:id="@+id/TabPopularevents"-->
+
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Popular Events" />-->
+
+<!--    </com.google.android.material.tabs.TabLayout>-->
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
@@ -85,4 +103,21 @@
         android:layout_marginStart="0dp"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/bottom_navigation" />
+
+<androidx.drawerlayout.widget.DrawerLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/dl">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/navigation_menu">
+
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>
 </RelativeLayout>
