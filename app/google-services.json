@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "715745680168",
+    "firebase_url": "https://tick-it-b97c1.firebaseio.com",
+    "project_id": "tick-it-b97c1",
+    "storage_bucket": "tick-it-b97c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715745680168:android:c770f9fa70e3d536b00e1d",
+        "android_client_info": {
+          "package_name": "com.example.tick_it"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "715745680168-rofl0udq0ggfe47n0uf1ip3o6mmb7gb6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tick_it",
+            "certificate_hash": "e6e7c4ad883fabe8b4086f7967adafc2017a0a20"
+          }
+        },
+        {
+          "client_id": "715745680168-7d8eluvcn0pdbfl304v0heuepretfr9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYEKPVMfta4UTgOJ7OaZ1hnr7QV5Vebq8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "715745680168-7d8eluvcn0pdbfl304v0heuepretfr9s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
